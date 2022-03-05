@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { TodoListItem } from "./TodoListItem";
+import { TodoList } from "./TodoList";
+import { AddTodoForm } from "./AddTodoForm";
 
 const initialTodos: Todo[] = [
   {
-    text: 'Walk the dog',
+    text: "Walk the dog",
     complete: false,
   },
   {
-    text: 'Write app',
+    text: "Write app",
     complete: true,
   },
 ];
@@ -29,10 +30,10 @@ function App() {
   };
 
   return (
-    <ul>
-      <TodoListItem todo={todos[0]} toggleTodo={toggleTodo} />
-      <TodoListItem todo={todos[1]} toggleTodo={toggleTodo} />
-    </ul>
+    <>
+      <TodoList todos={todos} toggleTodo={toggleTodo} />
+      <AddTodoForm />
+    </>
   );
 }
 
