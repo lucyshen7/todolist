@@ -15,6 +15,9 @@ App.use(BodyParser.urlencoded({
 App.use(BodyParser.json());
 App.use(Express.static('public'));
 
+const todoRoutes = require("./routes/todos");
+App.use("/api/todos", todoRoutes);
+
 // Single-page application
 App.get('/api/todos', (req, res) => res.json({
   message: "Seems to work!",
