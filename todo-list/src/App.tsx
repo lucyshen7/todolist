@@ -47,6 +47,7 @@ function App() {
         height: '75%',
         borderRadius: '5%',
         backgroundColor: '#8897c1',
+        overflow: "auto",
       }}
     >
       <TodoList todos={todos} toggleTodo={toggleTodo} />

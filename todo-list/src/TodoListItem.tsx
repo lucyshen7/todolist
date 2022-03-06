@@ -24,7 +24,6 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
             toggleTodo(todo);
           }}
           inputProps={{ "aria-labelledby": todo.text }}
-          sx={{ bgcolor: "white" }}
         />{" "}
         {todo.text}
       </label>
