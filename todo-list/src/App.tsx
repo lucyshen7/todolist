@@ -43,9 +43,10 @@ function App() {
         flexDirection: "column",
         justifyContent: "center",
         margin: "auto",
-        width: '50%',
-        height: '100vh',
-        backgroundColor: 'cornsilk',
+        width: '30%',
+        height: '75%',
+        borderRadius: '5%',
+        backgroundColor: '#8897c1',
       }}
     >
       <TodoList todos={todos} toggleTodo={toggleTodo} />

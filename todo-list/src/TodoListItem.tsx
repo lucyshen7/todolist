@@ -12,7 +12,7 @@ interface Props {
 export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
   // Declare TodoListItem as a functional component (React.FC) and pass Props as a generic
   return (
-    <ListItem sx={{ bgcolor: "lightblue" }}>
+    <ListItem sx={{ bgcolor: "lightgray" }}>
       <label
         style={{ textDecoration: todo.complete ? "line-through" : undefined }}
       >
@@ -24,6 +24,7 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
             toggleTodo(todo);
           }}
           inputProps={{ "aria-labelledby": todo.text }}
+          sx={{ bgcolor: "white" }}
         />{" "}
         {todo.text}
       </label>
