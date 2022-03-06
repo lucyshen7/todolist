@@ -21,8 +21,7 @@ function App() {
 
   useEffect(() => {
     // fetch todos
-    axios
-      .get('/api/todos')
+    Promise.all([axios.get('/api/todos')])
       .then((response) => {
         console.log("response!!!", response);
       })
