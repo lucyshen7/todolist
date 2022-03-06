@@ -1,5 +1,6 @@
 import React from "react";
 import { TodoListItem } from "./TodoListItem";
+import List from "@mui/material/List";
 
 interface Props {
   todos: Todo[];
@@ -8,10 +9,20 @@ interface Props {
 
 export const TodoList: React.FC<Props> = ({ todos, toggleTodo }) => {
   return (
-    <ul>
+    <List
+      sx={{
+        width: "100%",
+        maxWidth: 360,
+        height: "50",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        rowGap: "5px",
+      }}
+    >
       {todos.map((todo) => (
         <TodoListItem key={todo.text} todo={todo} toggleTodo={toggleTodo} />
       ))}
-    </ul>
+    </List>
   );
 };

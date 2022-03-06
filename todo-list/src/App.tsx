@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { TodoList } from "./TodoList";
 import { AddTodoForm } from "./AddTodoForm";
+import { Container } from "@mui/material";
+import "./App.scss";
 
 const initialTodos: Todo[] = [
   {
@@ -35,10 +37,20 @@ function App() {
   };
 
   return (
-    <>
+    <Container
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        margin: "auto",
+        width: '50%',
+        height: '100vh',
+        backgroundColor: 'cornsilk',
+      }}
+    >
       <TodoList todos={todos} toggleTodo={toggleTodo} />
       <AddTodoForm addTodo={addTodo} />
-    </>
+    </Container>
   );
 }
 
