@@ -15,8 +15,8 @@ App.use(BodyParser.urlencoded({
 App.use(BodyParser.json());
 App.use(Express.static('public'));
 
-// Single Page App
-App.get('/api/data', (req, res) => res.json({
+// Single-page application
+App.get('/api/todos', (req, res) => res.json({
   message: "Seems to work!",
 }));
 
