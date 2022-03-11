@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { TodoList } from "./TodoList";
 import { AddTodoForm } from "./AddTodoForm";
 import { Container } from "@mui/material";
-import "./App.scss";
 import axios from "axios";
+import "./App.scss";
 
 const initialTodos: Todo[] = [
+  { id: 1, text: "Walk the dog!!", complete: false },
   {
-    text: "Walk the dog!!",
-    complete: false,
-  },
-  {
-    text: "Write app!!",
+    id: 2, text: "Write app!!",
     complete: true,
   },
 ];
@@ -21,29 +18,44 @@ function App() {
 
   useEffect(() => {
     // fetch todos
-    Promise.all([axios.get('/api/todos')])
+    axios
+      .get("http://localhost:8080/api/todos")
       .then((response) => {
-        console.log("response!!!", response);
+        const todos = response.data.todos;
+        setTodos(todos);
       })
-      .catch((err) => console.log("err fetching data!", err.message));
+      .catch((err) => console.log("err fetching data!!!!", err.message));
   }, []);
 
   const toggleTodo = (selectedTodo: Todo) => {
-    const newTodos = todos.map((todo) => {
-      if (todo === selectedTodo) {
-        return {
-          ...todo,
-          complete: !todo.complete,
-        };
-      }
-      return todo;
-    });
-    setTodos(newTodos);
+    axios
+      .post("http://localhost:8080/api/todos", {
+        id: selectedTodo.id,
+        complete: !selectedTodo.complete,
+      })
+      .then((res) => {
+        const newTodos = todos.map((todo) => {
+          if (todo === selectedTodo) {
+            return {
+              ...todo,
+              complete: !todo.complete,
+            };
+          }
+          return todo;
+        });
+        setTodos(newTodos);
+      });
   };
 
   const addTodo: AddTodo = (text: string) => {
-    const newTodo = { text, complete: false };
-    setTodos([...todos, newTodo]);
+    axios
+    .post("http://localhost:8080/api/todos/add", {
+      text: text
+    })
+    .then((res) => {
+      const newTodo = res.data.response[0];
+      setTodos([...todos, newTodo]);
+    });
   };
 
   return (

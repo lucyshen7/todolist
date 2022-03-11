@@ -1,6 +1,7 @@
 // Type Declaration File (global to the project)
 
 interface Todo {
+  id: number;
   text: string;
   complete: boolean;
 }

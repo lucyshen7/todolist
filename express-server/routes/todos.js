@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../db/index');
+const todosQueries = require('../db/todos-queries');
 
 // GET todos
-router.get("/api/todos", (req, res) => {
-  let query = `SELECT * FROM todos;`;
-  return db.query(query)
-    .then((response) => {
-      console.log('responseee', response);
-      res.json({ response });
+router.get("/", (req, res) => {
+  todosQueries.getTodos()
+    .then((todos) => {
+      console.log('todos', todos);
+      res.json({ todos });
     })
     .catch((err) => {
       res
@@ -18,9 +17,25 @@ router.get("/api/todos", (req, res) => {
 });
 
 // POST to todos table
-router.post("/api/todos", (req, res) => {
-  const query = ``;
-  return db.query(query)
+router.post("/", (req, res) => {
+  const { complete, id } = req.body;
+
+  todosQueries.updateTodo(complete, id)
+    .then((response) => {
+      res.json({ response });
+    })
+    .catch((err) => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
+
+// ADD todo
+router.post("/add", (req, res) => {
+  const { text } = req.body;
+
+  todosQueries.addTodo(text)
     .then((response) => {
       res.json({ response });
     })
