@@ -5,13 +5,7 @@ import { Container } from "@mui/material";
 import axios from "axios";
 import "./App.scss";
 
-const initialTodos: Todo[] = [
-  // { id: 1, text: "Walk the dog!!", complete: false },
-  // {
-  //   id: 2, text: "Write app!!",
-  //   complete: true,
-  // },
-];
+const initialTodos: Todo[] = [];
 
 function App() {
   const [todos, setTodos] = useState(initialTodos);
