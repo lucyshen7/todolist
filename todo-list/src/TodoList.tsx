@@ -18,6 +18,8 @@ export const TodoList: React.FC<Props> = ({ todos, toggleTodo }) => {
         flexDirection: "column",
         justifyContent: "center",
         rowGap: "5px",
+        maxHeight: "60vh",
+        overflow: "auto",
       }}
     >
       {todos.map((todo) => (

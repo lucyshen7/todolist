@@ -8,7 +8,7 @@ import "./App.scss";
 
 const initialTodos: Todo[] = [];
 
-const fakeUser = { name: "Emily" }; // to be replaced
+const fakeUser = { name: "Cody" }; // to be replaced
 
 function App() {
   const [todos, setTodos] = useState(initialTodos);
@@ -66,11 +66,12 @@ function App() {
           margin: "auto",
           width: "100%",
           height: "100%",
-          backgroundColor: "#e5bee7",
+          backgroundColor: "#b4a4bb",
           overflow: "auto",
         }}
       >
         <div className="todo-box">
+          <h1>My To-Do List</h1>
           <TodoList todos={todos} toggleTodo={toggleTodo} />
           <AddTodoForm addTodo={addTodo} />
         </div>

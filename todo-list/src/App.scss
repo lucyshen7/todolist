@@ -1,5 +1,5 @@
 #root {
-  background-color: #daedf3;
+  background-color: #b4a4bb;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,11 +21,12 @@ form.add-todo {
   padding-right: 15px;
   align-items: center;
   height: 80px;
-  background-color: #a8eafc; 
+  background-color:#b5e0c3; 
 }
 
 .todo-box {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto;
 }
