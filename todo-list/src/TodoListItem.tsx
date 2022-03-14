@@ -1,6 +1,7 @@
 import React from "react";
 import ListItem from "@mui/material/ListItem";
 import Checkbox from "@mui/material/Checkbox";
+import "./App.scss";
 
 interface Props {
   todo: Todo;
@@ -15,6 +16,7 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
     <ListItem sx={{ bgcolor: "#eaeaea" }}>
       <label
         style={{ textDecoration: todo.complete ? "line-through" : undefined }}
+        className="todo-items"
       >
         <Checkbox
           edge="start"
