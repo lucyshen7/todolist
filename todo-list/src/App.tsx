@@ -8,7 +8,7 @@ import "./App.scss";
 
 const initialTodos: Todo[] = [];
 
-const fakeUser = { name: "Cody" }; // to be replaced
+const fakeUser = { name: "Alice" }; // to be replaced
 
 function App() {
   const [todos, setTodos] = useState(initialTodos);

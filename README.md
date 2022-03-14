@@ -1,3 +1,5 @@
 # A To-Do List with TypeScript
 
-**Project In Progress** 💻
+### A simple full-stack to-do list built with PostgreSQL, Node, Express, React & **TypeScript**.
+
+### Users can add to-do items and check them off when complete.
