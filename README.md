@@ -4,6 +4,6 @@ A simple To-Do List built with PostgreSQL, Node, Express, React & **TypeScript**
 
 Users can add to-do items and check them off when complete.
 
-### Screenshot of the Single Page Application:
+**Screenshot of the Single Page Application:**
 
 !["Screenshot of To-Do List App"](/docs/todo.png)
