@@ -8,11 +8,11 @@
 }
 
 form.add-todo {
-  display: flex; 
+  display: flex;
   flex-direction: row;
   justify-content: flex-start;
   column-gap: 5px;
-} 
+}
 
 .nav {
   display: flex;
@@ -21,7 +21,7 @@ form.add-todo {
   padding-right: 15px;
   align-items: center;
   height: 80px;
-  background-color:#b5e0c3; 
+  background-color:#b5e0c3;
   column-gap: 10px;
 }
 
@@ -33,11 +33,12 @@ form.add-todo {
 }
 
 .title {
-  font-family: 'Bungee Shade', cursive;
+  font-family: "Bungee Shade", cursive;
   font-size: 38px;
 }
 
-.todo-items, .nav {
-  font-family: 'Baloo 2', cursive;
+.todo-items,
+.nav {
+  font-family: "Baloo 2", cursive;
   font-size: 18px;
 }
