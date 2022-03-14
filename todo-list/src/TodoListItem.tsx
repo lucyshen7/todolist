@@ -12,7 +12,7 @@ interface Props {
 export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
   // Declare TodoListItem as a functional component (React.FC) and pass Props as a generic
   return (
-    <ListItem sx={{ bgcolor: "lightgray" }}>
+    <ListItem sx={{ bgcolor: "#eaeaea" }}>
       <label
         style={{ textDecoration: todo.complete ? "line-through" : undefined }}
       >

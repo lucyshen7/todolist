@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { TodoList } from "./TodoList";
 import { AddTodoForm } from "./AddTodoForm";
+import { Navbar } from "./Navbar";
 import { Container } from "@mui/material";
 import axios from "axios";
 import "./App.scss";
 
 const initialTodos: Todo[] = [];
+
+const fakeUser = { name: "Emily" } // to be replaced
 
 function App() {
   const [todos, setTodos] = useState(initialTodos);
@@ -43,32 +46,34 @@ function App() {
 
   const addTodo: AddTodo = (text: string) => {
     axios
-    .post("http://localhost:8080/api/todos/add", {
-      text: text
-    })
-    .then((res) => {
-      const newTodo = res.data.response[0];
-      setTodos([...todos, newTodo]);
-    });
+      .post("http://localhost:8080/api/todos/add", {
+        text: text,
+      })
+      .then((res) => {
+        const newTodo = res.data.response[0];
+        setTodos([...todos, newTodo]);
+      });
   };
 
   return (
-    <Container
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        margin: "auto",
-        width: "30%",
-        height: "75%",
-        borderRadius: "5%",
-        backgroundColor: "#8897c1",
-        overflow: "auto",
-      }}
-    >
-      <TodoList todos={todos} toggleTodo={toggleTodo} />
-      <AddTodoForm addTodo={addTodo} />
-    </Container>
+    <>
+      <Navbar user={fakeUser} />
+      <Container
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          margin: "auto",
+          width: "100%",
+          height: "100%",
+          backgroundColor: "#e5bee7",
+          overflow: "auto",
+        }}
+      >
+        <TodoList todos={todos} toggleTodo={toggleTodo} />
+        <AddTodoForm addTodo={addTodo} />
+      </Container>
+    </>
   );
 }
 
