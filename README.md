@@ -4,6 +4,6 @@
 
 - Users can add to-do items and check them off when complete.
 
-**Screenshot of the App:**
+**GIF of the App:**
 
-!["Screenshot of To-Do List App"](/docs/todo.png)
+!["GIF of To-Do List App"](/docs/todo-list.gif)
