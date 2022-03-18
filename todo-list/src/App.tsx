@@ -58,18 +58,7 @@ function App() {
   return (
     <>
       <Navbar user={fakeUser} />
-      <Container
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          margin: "auto",
-          width: "100%",
-          height: "100%",
-          backgroundColor: "#b4a4bb",
-          overflow: "auto",
-        }}
-      >
+      <Container className="main-container">
         <div className="todo-box">
           <h1 className="title">My To-Do List</h1>
           <TodoList todos={todos} toggleTodo={toggleTodo} />
